@@ -1,7 +1,8 @@
 /* Core */
 import { Link } from 'react-router-dom';
+import { MovieProps } from '../types';
 
-export const Movie = (props) => {
+export const MovieComp = (props: MovieProps) => {
     return (
         <Link to = { `/movies/${props.movie.id}` }>
             <article>

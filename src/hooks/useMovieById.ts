@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 
 /* Instruments */
 import { api } from '../api';
+import { Movie } from '../types';
 
-export const useMovieById = (id) => {
-    const [ movie, setMovie ] = useState(null);
+export const useMovieById = (id: number) => {
+    const [ movie, setMovie ] = useState<Movie | null>(null);
 
     useEffect(() => {
         const getMovieById = async () => {

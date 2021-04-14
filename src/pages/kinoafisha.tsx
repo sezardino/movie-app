@@ -2,7 +2,7 @@
 import { observer } from 'mobx-react-lite';
 
 /* Components */
-import { Movie } from '../components';
+import { MovieComp } from '../components';
 import { Logo } from '../theme/icons';
 
 /* Instruments */
@@ -14,7 +14,7 @@ export const Kinoafisha = observer(() => {
 
     const moviesJSX = movies?.map((movie) => {
         return (
-            <Movie
+            <MovieComp
                 key = { movie.id }
                 movie = { movie }
             />

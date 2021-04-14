@@ -9,7 +9,7 @@ import { useMovieById } from '../hooks';
 
 export const MovieById = () => {
     const params = useParams();
-    const { data: movieToView } = useMovieById(params.id);
+    const { data: movieToView } = useMovieById(Number(params.id));
 
     const movieToViewJSX = movieToView && (
         <section className = 'movie-view'>

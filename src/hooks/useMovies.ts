@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react';
 /* Instruments */
 import { api } from '../api';
 import { filterStore } from '../lib/filterStore';
+import { Movie } from '../types';
 
 export const useMovies = () => {
-    const [ movies, setMovies ] = useState(null);
+    const [ movies, setMovies ] = useState<Array<Movie> | null>(null);
 
     useEffect(() => {
         const getMoviesByFilter = async () => {
