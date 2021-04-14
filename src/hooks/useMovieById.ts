@@ -1,22 +1,13 @@
 /* Core */
 import { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
 
 /* Instruments */
 import { api } from '../api';
 import { Movie } from '../types';
 
 export const useMovieById = (id: number) => {
-    const [ movie, setMovie ] = useState<Movie | null>(null);
+    const query = useQuery([ 'movie', id ], () => api.getMovieById(id));
 
-    useEffect(() => {
-        const getMovieById = async () => {
-            const newMovies = await api.getMovieById(id);
-
-            setMovie(newMovies);
-        };
-
-        getMovieById();
-    }, [ id ]);
-
-    return { data: movie };
+    return query;
 };
